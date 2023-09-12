@@ -1,0 +1,16 @@
+.error {
+  display: flex;
+  flex-direction: row;
+  word-wrap: none;
+  max-width: 95vw;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: large;
+  background-color: rgba(255, 0, 0, 0.664);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border-radius: 1em;
+  border: solid rgb(255, 174, 0);
+  padding: 1em;
+  font-family: "Karla", Verdana, Geneva, Tahoma, sans-serif;
+}

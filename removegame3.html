@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Game3</title>
+    <meta name="description" content="Your cart is empty." />
+  </head>
+
+  <!--fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;700&family=Overlock+SC&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <body>
+    <header>
+      <div>
+        <a href="index.html" class="header-item-1"
+          ><img
+            class="logo"
+            src="images/buttons_and_icons/Logo_test.png"
+            alt="A drawing of a console controller, and the text 'Game Hub'. This is the company logo"
+        /></a>
+      </div>
+      <div>
+        <form action="list_of_games.html" class="GET">
+          <label for="search" class="hidden-label">Search</label>
+          <input type="search" class="search" />
+        </form>
+        <a href="list_of_games.html"
+          ><img
+            class="search-icon"
+            src="images/buttons_and_icons/Search.png"
+            alt="search-icon"
+        /></a>
+      </div>
+      <nav>
+        <a href="login.html" class="header-item-2"
+          ><img
+            class="log-in"
+            src="images/buttons_and_icons/Login.png"
+            alt="This is a link to the log-in section"
+        /></a>
+        <a href="checkout.html" class="header-item-3"
+          ><img
+            class="checkout"
+            src="images/buttons_and_icons/Checkout.png"
+            alt="a shopping-cart icon. This is a link to the checkout section"
+        /></a>
+      </nav>
+    </header>
+    <!--
+  Review Cart
+-->
+    <main class="checkout-main">
+      <div class="review"><h2>Review Cart and Checkout</h2></div>
+
+      <section class="checkout_display">
+        <!--<div class="grid-item grid-item-1">
+          1 x Super Duper for Playbox, digital download
+        </div>
+
+        <div class="grid-item grid-item-2"><strong>Kr.450</strong></div>
+
+        <div class="grid-item grid-item-3">
+          <img
+            src="images/GameHub_covers2.jpg"
+            alt="A photograph of a girl dressed in a homemade superhero suit, the title of the game 'Super Duper' is printed in capital letters"
+          />
+        </div>
+        <div class="button grid-item-4">
+          <a href="removegame1.html">Remove From Cart</a>
+        </div> 
+        <div class="grid-item grid-item-5">1 x Assassin for Playbox, used</div>
+
+        <div class="grid-item grid-item-6"><strong>Kr.150</strong></div>
+
+        <div class="grid-item grid-item-7">
+          <img
+            src="images/GameHub_covers3.jpg"
+            alt="A portrait of a menacing hooded character, with two swords on his back"
+          />
+        </div>
+
+        <div class="button grid-item-8">
+          <a href="removegame3.html">Remove From Cart</a>
+        </div>-->
+
+        <h2>Your cart is empty</h2>
+      </section>
+
+      <!--
+  Checkout forms
+-->
+      <section class="checkout-form">
+        <h2>Checkout</h2>
+
+        <form action="checkout-success.html" class="GET">
+          <fieldset>
+            <legend>Contact</legend>
+            <input
+              class="flexbox-item flexbox-item-1"
+              type="email"
+              name="email"
+              id="email"
+              class="checkout_email"
+              placeholder="Example@mail.com"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Cardholder Name</legend>
+            <input
+              class="flexbox-item flexbox-item-2"
+              type="text"
+              class="first_name"
+              placeholder="First Name"
+              required
+            />
+            <input
+              class="flexbox-item flexbox-item-3"
+              type="text"
+              class="last_name"
+              placeholder="Last Name"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Card Number</legend>
+
+            <input
+              class="flexbox-item flexbox-item-4"
+              type="number"
+              class="card_number"
+              placeholder="1234 1234 1234 1234"
+              required
+            />
+
+            <img
+              class="visa"
+              src="images/buttons_and_icons/VisaMaster.png"
+              alt="Visa and Mastercard logos, payment options."
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Expiration date</legend>
+
+            <input
+              class="flexbox-item flexbox-item-5"
+              type="text"
+              placeholder="MM/YY"
+              required
+            />
+            <legend>CVC</legend>
+            <input
+              class="flexbox-item flexbox-item-6"
+              type="number"
+              placeholder="123"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <legend>Address</legend>
+            <label for="address 1">Address 1</label>
+
+            <input
+              class="flexbox-item flexbox-item-7"
+              type="text"
+              placeholder="Street Address"
+              required
+            />
+
+            <label for="address 2">Address 2</label>
+
+            <input
+              class="flexbox-item flexbox-item-8"
+              type="text"
+              placeholder="Alternate Address"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <legend>Country</legend>
+            <label for="country">Country</label>
+
+            <input
+              class="flexbox-item flexbox-item-9"
+              type="text"
+              placeholder="Your Country"
+              required
+            />
+
+            <label for="zip code">ZIP Code</label>
+
+            <input
+              class="flexbox-item flexbox-item-10"
+              type="number"
+              placeholder="ZIP"
+              required
+            />
+          </fieldset>
+
+          <section class="total">
+            <!--<span
+              >1 x Assassin for Playbox, used <strong>Kr. 150</strong>
+            </span>-->
+            <!--<br /><br />-->
+            <!-- <span>
+              1 X Karla Keys for Playbox, digital
+              <strong>Kr. 450</strong> download
+            </span>-->
+            <span class="break">Shipping Cost <strong>Kr. 0</strong> </span>
+
+            <hr />
+            Total item costs <strong>Kr. 0</strong> <br /><br />
+          </section>
+          <div class="flex-button">
+            <a href="checkout-success.html"
+              ><input
+                type="submit"
+                class="button button-submit2"
+                value="Place Your Order"
+            /></a>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <span class="footer-left">
+        <a class="anim-about" href="about.html">ABOUT US</a>
+        <a class="anim-contact" href="contact.html">CONTACT</a>
+      </span>
+
+      <span class="footer-center">&copy; 2023 GAME HUB</span>
+      <span class="footer-right">
+        FOLLOW US:
+
+        <img
+          class="so-me"
+          src="images/buttons_and_icons/SoME.png"
+          alt="Icons for social media, Facebook, Twitter and Instagram"
+        />
+      </span>
+    </footer>
+  </body>
+</html>

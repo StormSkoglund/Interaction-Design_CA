@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;700&family=Overlock+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/error.css" />
+    <title>List of games</title>
+    <meta
+      name="description"
+      content="This is a list of all the current products available for sale on Game Hub"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="index.html" class="header-item-1"
+          ><img
+            class="logo"
+            src="images/buttons_and_icons/Logo_test.png"
+            alt="A drawing of a console controller, and the text 'Game Hub'. This is the company logo"
+        /></a>
+      </div>
+      <div>
+        <form action="list_of_games.html" class="GET">
+          <label for="search" class="hidden-label">Search</label>
+          <input type="search" class="search" />
+        </form>
+        <a href="list_of_games.html"
+          ><img
+            class="search-icon"
+            src="images/buttons_and_icons/Search.png"
+            alt="search-icon"
+        /></a>
+      </div>
+      <nav>
+        <a href="login.html" class="header-item-2"
+          ><img
+            class="log-in"
+            src="images/buttons_and_icons/Login.png"
+            alt="This is a link to the log-in section"
+        /></a>
+        <a href="checkout.html" class="header-item-3"
+          ><img
+            class="checkout"
+            src="images/buttons_and_icons/Checkout.png"
+            alt="a shopping-cart icon. This is a link to the checkout section"
+        /></a>
+      </nav>
+    </header>
+    <main class="main-games-list">
+      <section class="games-list-description">
+        <div class="h1-list">
+          <h1>Browse our large selection of Playbox titles</h1>
+        </div>
+
+        <div class="h1-list2">
+          <h1>GAMES LIST</h1>
+          <p>
+            From mind-bending action games to ultra-realistic simulators, <br />
+            we’ve got you covered with our ever-expanding library of next-gen
+            console games!
+          </p>
+        </div>
+        <div class="console-images">
+          <img
+            src="images/Super_duper1.jpeg"
+            alt="A cartoonish drawing of a futuristic super hero girl"
+          />
+          <img
+            src="images/Play_Boxconsole.jpeg"
+            alt="An image of a green gaming console"
+          /><img
+            src="/images/Super_duper4.png"
+            alt="An image of a female superhero, in a yellow suit"
+          />
+        </div>
+
+        <div class="h2-list">
+          <h2>THE GREEN TITAN</h2>
+          <p>
+            Playbox is the leading console on the market right now. Since it is
+            a next-gen machine, the availability of games is slowly but steadily
+            gaining momentum. We have all available titles in stock, both new
+            and pre-owned games. Have a look!
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="consolebanner1">Playbox games</h2>
+      </section>
+
+      <section class="games-list">
+        <div class="loadContainer">
+          <div class="loadScreen">Loading...</div>
+        </div>
+        <div class="errCont">
+          <div class="error"></div>
+        </div>
+        <!--<div>
+          <label for="assassin game Playbox">Assassin</label>
+          <img
+            src="images/GameHub_covers5.jpg"
+            alt="Portrait of a menacing looking, hooded assassin with two swords on his back. This is a game cover"
+            class="img_as_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="black game Playbox">Black</label>
+          <img
+            src="images/GameHub_covers3.jpg"
+            alt="Portrait of a skeletal hooded figure, with red crosses for eyes. This is a game cover"
+            class="img_bl_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="boxer game Playbox">Boxer</label>
+          <img
+            src="images/GameHub_covers8.jpg"
+            alt="Profile shot of a boxer jabbing with his right arm. This is a game cover"
+            class="img_bo_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="cyberpunk game Playbox">Cyberpunk</label>
+          <img
+            src="images/GameHub_covers9.jpg"
+            alt="Portrait of a futuristic looking woman with purple hair and a large saber in her left hand. This is a game cover"
+            class="img_cy_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="forge legend game Playbox">Forge Legend</label>
+          <img
+            src="images/GameHub_covers10.jpg"
+            alt="Portrait of a beautiful elf woman, wearing a golden leaf diadem. This is a game cover"
+            class="img_fl_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="furious game Playbox">Furious</label>
+          <img
+            src="images/GameHub_covers4.jpg"
+            alt="Portrait a menacing looking chimpanzee with green, glowing eyes. This is a game cover"
+            class="img_fu_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="ping pong game Playbox">Ping Pong</label>
+          <img
+            src="images/GameHub_covers.jpg"
+            alt="A logo consisting of two ping pong bats. This is a game cover"
+            class="img_pi_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="racing game Playbox">Racing</label>
+          <img
+            src="images/GameHub_covers7.jpg"
+            alt="A logo spelling out the word 'racing', with a black and white signal flag in the background. This is a game cover"
+            class="img_ra_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="space war Playbox">Space War</label>
+          <img
+            src="images/GameHub_covers6.jpg"
+            alt="A picture of the outer space, the title 'Space War' is spelled out in capital letters in the middle of the screen. This is a game cover"
+            class="img_sp_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="super duper Playbox">Super Duper</label>
+          <img
+            src="images/GameHub_covers2.jpg"
+            alt="A portrait of a young girl, dressed in a superhero suit. 'Super duper' is spelled out in the foreground of the image. This is a game cover"
+            class="img_su_pl"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div> -->
+      </section>
+
+      <!--<section>
+        <h2 class="consolebanner2">GS PRO GAMES</h2>
+      </section>
+
+      <section class="games-list2">
+        <div>
+          <label for="academia game GS PRO">Academia: College Sim </label>
+          <img
+            src="images/GSPRO_Academia.jpeg"
+            alt="A picture of a an entrance to a college building, the title 'Academia College Sim' is printed in white in the foreground. This is a game cover"
+            class="img_ac_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="assassin game GS PRO">Assassin</label>
+          <img
+            src="images/GSPRO_Assassin.png"
+            alt="Portrait of a menacing looking, hooded assassin with two swords on his back. This is a game cover"
+            class="img_as_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="black game GS PRO">Black</label>
+          <img
+            src="images/GSPRO_Black.png"
+            alt="Portrait of a skeletal hooded figure, with red crosses for eyes. This is a game cover"
+            class="img_bl_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="boxer game GS PRO">Boxer</label>
+          <img
+            src="images/GSPRO_Boxing.png"
+            alt="Profile shot of a boxer jabbing with his right arm. This is a game cover"
+            class="img_bo_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="cyberpunk game GS PRO">Cyberpunk</label>
+          <img
+            src="images/GSPRO_Cyberpunk.png"
+            alt="Portrait of a futuristic looking woman with purple hair and a large saber in her left hand. This is a game cover"
+            class="img_cy_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="forge legend game GS PRO">Forge Legend</label>
+          <img
+            src="images/GSPRO_Forge.png"
+            alt="Portrait of a beautiful elf woman, wearing a golden leaf diadem. This is a game cover"
+            class="img_fl_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="furious game GS PRO">Furious</label>
+          <img
+            src="images/GSPRO_Furious.png"
+            alt="Portrait a menacing looking chimpanzee with green, glowing eyes. This is a game cover"
+            class="img_fu_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="ping pong game GS PRO">Ping Pong</label>
+          <img
+            src="images/GSPRO_Ping.png"
+            alt="A logo consisting of two ping pong bats. This is a game cover"
+            class="img_pi_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="racing game GS PRO">Racing</label>
+          <img
+            src="images/GSPRO_Racing.png"
+            alt="A logo spelling out the word 'racing', with a black and white signal flag in the background. This is a game cover"
+            class="img_ra_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>
+
+        <div>
+          <label for="space war GS PRO">Space War</label>
+          <img
+            src="images/GSPRO_Space War.png"
+            alt="A picture of the outer space, the title 'Space War' is spelled out in capital letters in the middle of the screen. This is a game cover"
+            class="img_sp_gs"
+          />
+          <a href="product_page.html" class="button games-button">View Game</a>
+        </div>-->
+      <!--</section>-->
+    </main>
+    <footer>
+      <span class="footer-left">
+        <a class="anim-about" href="about.html">ABOUT US</a>
+        <a class="anim-contact" href="contact.html">CONTACT</a>
+      </span>
+
+      <span class="footer-center">&copy; 2023 GAME HUB</span>
+      <span class="footer-right">
+        FOLLOW US:
+
+        <img
+          class="so-me"
+          src="images/buttons_and_icons/SoME.png"
+          alt="Icons for social media, Facebook, Twitter and Instagram"
+        />
+      </span>
+    </footer>
+    <script src="/Javascript/product-list.js"></script>
+  </body>
+</html>

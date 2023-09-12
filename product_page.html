@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;700&family=Overlock+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/error.css" />
+
+    <title class="unTit"></title>
+    <meta class="meta" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="index.html" class="header-item-1"
+          ><img
+            class="logo"
+            src="images/buttons_and_icons/Logo_test.png"
+            alt="A drawing of a console controller, and the text 'Game Hub'. This is the company logo"
+        /></a>
+      </div>
+      <div>
+        <form action="list_of_games.html" class="GET">
+          <label for="search" class="hidden-label">Search</label>
+          <input type="search" class="search" />
+        </form>
+        <a href="list_of_games.html"
+          ><img
+            class="search-icon"
+            src="images/buttons_and_icons/Search.png"
+            alt="search-icon"
+        /></a>
+      </div>
+      <nav>
+        <a href="login.html" class="header-item-2"
+          ><img
+            class="log-in"
+            src="images/buttons_and_icons/Login.png"
+            alt="This is a link to the log-in section"
+        /></a>
+        <a href="checkout.html" class="header-item-3"
+          ><img
+            class="checkout"
+            src="images/buttons_and_icons/Checkout.png"
+            alt="a shopping-cart icon. This is a link to the checkout section"
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <!--<div class="overlay">
+        <img
+          class="product-hero"
+          src="images/flighty.gif"
+          alt="A super hero girl flying through the clouds"
+        />-->
+      <!--</div>-->
+      <div class="product-mobile-flex">
+        <div class="loadPar">
+          <div class="loadScreen">Loading...</div>
+        </div>
+        <div class="errCont">
+          <div class="error" id="error"></div>
+        </div>
+
+        <!--<img
+          class="product-game"
+          src="images/GameHub_covers2.jpg"
+          alt="Cover of a video game about a superhero girl"
+        />-->
+      </div>
+
+      <!--<h2>I believe I can fly</h2>
+      <article class="product-text">
+        <h2>I believe I can fly</h2>
+        <p>Soar into the sky as the “Super Duper” Karla Keys!</p>
+        <p>
+          “Super Duper” lets you explore the life of a superhero, from early
+          childhood to adulthood. balancing everyday life with superpowers,
+          dealing with school, super villains, and tax returns!
+        </p>-->
+      <!--</article>-->
+      <aside class="pick-game">
+        <div>Pre-owned game</div>
+        <div><span class="break"> -Physical copy</span></div>
+        <div>
+          <a href="addcart.html" class="button cta new-game">Add to Cart</a>
+        </div>
+
+        <div class="price-cart"></div>
+
+        <div>New</div>
+        <div><span class="break"> -Digital download </span></div>
+
+        <div>
+          <a href="addcart.html" class="button cta used-game">Add to Cart</a>
+        </div>
+
+        <div class="price-cart2"></div>
+      </aside>
+
+      <!--<div class="screenshots">
+        <h2>Screenshots:</h2>
+
+        <img
+          class="shot1"
+          src="images/Super_duper3.png"
+          alt="A female superhero standing on top of a building"
+          class="product screen1"
+        />
+        <img
+          class="shot2"
+          src="images/Super_duper4.png"
+          alt="A female superhero flying towards the camera"
+          class="product screen2"
+        />
+        <img
+          class="shot3"
+          src="images/Super_duper1.jpeg"
+          alt="Portrait of a female superhero"
+          class="product screen3"
+        />
+      </div>-->
+    </main>
+    <footer>
+      <span class="footer-left">
+        <a class="anim-about" href="about.html">ABOUT US</a>
+        <a class="anim-contact" href="contact.html">CONTACT</a>
+      </span>
+
+      <span class="footer-center">&copy; 2023 GAME HUB</span>
+      <span class="footer-right">
+        FOLLOW US:
+
+        <img
+          class="so-me"
+          src="images/buttons_and_icons/SoME.png"
+          alt="Icons for social media, Facebook, Twitter and Instagram"
+        />
+      </span>
+    </footer>
+    <script src="/Javascript/product-details.js"></script>
+  </body>
+</html>

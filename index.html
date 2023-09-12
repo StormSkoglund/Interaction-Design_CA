@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;700&family=Overlock+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="stylesheet" href="css/error.css" />
+    <title>Game Hub Site - home-page</title>
+    <meta
+      name="description"
+      content="The home page Game Hub- The Universe Of Games. Here you will find a multitude of games, either as on-demand download or used physical products, you can even sell your pre-owned games. Come have a look!"
+    />
+  </head>
+  <body class="index-body">
+    <header>
+      <div>
+        <a href="index.html" class="header-item-1"
+          ><img
+            class="logo"
+            src="images/buttons_and_icons/Logo_test.png"
+            alt="A drawing of a console controller, and the text 'Game Hub'. This is the company logo"
+        /></a>
+      </div>
+      <div>
+        <form action="list_of_games.html" class="GET">
+          <label for="search" class="hidden-label">Search</label>
+          <input type="search" class="search" />
+        </form>
+        <a href="list_of_games.html"
+          ><img
+            class="search-icon"
+            src="images/buttons_and_icons/Search.png"
+            alt="search-icon"
+        /></a>
+      </div>
+      <nav>
+        <a href="login.html" class="header-item-2"
+          ><img
+            class="log-in"
+            src="images/buttons_and_icons/Login.png"
+            alt="This is a link to the log-in section"
+        /></a>
+        <a href="checkout.html" class="header-item-3"
+          ><img
+            class="checkout"
+            src="images/buttons_and_icons/Checkout.png"
+            alt="a shopping-cart icon. This is a link to the checkout section"
+        /></a>
+      </nav>
+    </header>
+    <main class="main-split">
+      <section>
+        <div>
+          <img
+            class="hero"
+            src="images/flighty.gif"
+            alt="An animation of a flying girl dressed in a yellow super hero suit"
+          />
+        </div>
+
+        <div class="first-textbox">
+          <h1>GAME OF THE YEAR 2022</h1>
+          <p>
+            With a great combination of smooth cell-shaded graphics and
+            outstanding gameplay, the Playbox exclusive title "Super Duper" won
+            our hearts and turned out to be the top seller of 2022.
+          </p>
+        </div>
+
+        <div class="second-textbox">
+          <h1>THE SKY IS THE LIMIT</h1>
+          <h2>Soar into the sky as the “Super Duper” Karla Keys!</h2>
+          <p>
+            ...Or have a look at our collection of Playbox and GS Pro games. We
+            offer a wide selection of new and pre-owned titles at competitive
+            prices .
+          </p>
+        </div>
+      </section>
+      <section>
+        <!-- unused dropdown menu -->
+        <!--
+        <legend>Categories</legend>
+        <select name="Categories" id="Categories" class="button categories">
+          <option value="Action">Action</option>
+          <option value="City_builder">City builder</option>
+          <option value="FPS">FPS</option>
+          <option value="RPG">RPG</option>
+          <option value="Simulation">Simulation</option>
+          <option value="Sport">Sport</option>
+        </select>-->
+
+        <div class="buttons-front">
+          <a href="list_of_games.html" class="button list">All Games</a>
+          <a href="sell.html" class="button sell">Sell Your Games</a>
+        </div>
+      </section>
+      <div class="front-flexbox">
+        <span>
+          <!-- <img
+            src="images/GameHub_covers2.jpg"
+            alt="A portrait picture of a girl dressed in a superhero costume, the title 'Super Duper' is visible in the foreground"
+            class="front-cover"
+          /> -->
+          <img
+            src="images/Super_duper3.png"
+            alt="An image of a female superhero, standing on a rooftop with a skyline in the background"
+            class="front-screenshot"
+          />
+          <div class="errCont">
+            <span class="error" id="errorIndex"></span>
+          </div>
+          <div class="loadContainer">
+            <div class="loadScreen">Loading...</div>
+          </div>
+        </span>
+      </div>
+
+      <div class="text-flex-front">
+        <!--<p class="front-image-text">
+          “Super Duper” lets you explore the life of a superhero, from early
+          childhood to adulthood. balancing everyday life with superpowers,
+          dealing with school, super villains, and tax returns!
+        </p>-->
+
+        <!--<a class="button to-game" href="product_page.html">View Game</a> -->
+      </div>
+    </main>
+    <script src="/Javascript/index.js"></script>
+  </body>
+  <footer>
+    <span class="footer-left">
+      <a class="anim-about" href="about.html">ABOUT US</a>
+      <a class="anim-contact" href="contact.html">CONTACT</a>
+    </span>
+
+    <span class="footer-center">&copy; 2023 GAME HUB</span>
+    <span class="footer-right">
+      FOLLOW US:
+
+      <img
+        class="so-me"
+        src="images/buttons_and_icons/SoME.png"
+        alt="Icons for social media, Facebook, Twitter and Instagram"
+      />
+    </span>
+  </footer>
+</html>

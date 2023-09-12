@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Karla:wght@400;500;700&family=Overlock+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Sell your games</title>
+    <meta
+      name="description"
+      content="Sell your used games to us, we buy used titles for GS PRO and Game Hub, as long as they are in a good condition."
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="index.html" class="header-item-1"
+          ><img
+            class="logo"
+            src="images/buttons_and_icons/Logo_test.png"
+            alt="A drawing of a console controller, and the text 'Game Hub'. This is the company logo"
+        /></a>
+      </div>
+      <div>
+        <form action="list_of_games.html" class="GET">
+          <label for="search" class="hidden-label">Search</label>
+          <input type="search" class="search" />
+        </form>
+        <a href="list_of_games.html"
+          ><img
+            class="search-icon"
+            src="images/buttons_and_icons/Search.png"
+            alt="search-icon"
+        /></a>
+      </div>
+      <nav>
+        <a href="login.html" class="header-item-2"
+          ><img
+            class="log-in"
+            src="images/buttons_and_icons/Login.png"
+            alt="This is a link to the log-in section"
+        /></a>
+        <a href="checkout.html" class="header-item-3"
+          ><img
+            class="checkout"
+            src="images/buttons_and_icons/Checkout.png"
+            alt="a shopping-cart icon. This is a link to the checkout section"
+        /></a>
+      </nav>
+    </header>
+    <main class="contact-main">
+      <section class="infobox">
+        <div>
+          <h1>Sell Your Games</h1>
+          <p>
+            Interested in selling your games to us? Fill out the form below.
+            Please describe the condition of the game or games that you want to
+            sell, and we will return with an offer, within a working day or two.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-form">
+        <form action="sell-success.html" method="GET">
+          <label for="form">Fill out form</label>
+
+          <textarea
+            class="form"
+            name="message"
+            placeholder="Fill in this form"
+            required
+          ></textarea>
+
+          <label for="mail">Enter email address</label>
+          <input
+            type="email"
+            class="mail"
+            placeholder="Example@mail.com"
+            required
+          />
+
+          <a href="contact-success.html">
+            <input type="submit" class="button button-submit" value="Submit" />
+          </a>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <span class="footer-left">
+        <a class="anim-about" href="about.html">ABOUT US</a>
+        <a class="anim-contact" href="contact.html">CONTACT</a>
+      </span>
+
+      <span class="footer-center">&copy; 2023 GAME HUB</span>
+      <span class="footer-right">
+        FOLLOW US:
+
+        <img
+          class="so-me"
+          src="images/buttons_and_icons/SoME.png"
+          alt="Icons for social media, Facebook, Twitter and Instagram"
+        />
+      </span>
+    </footer>
+  </body>
+</html>
