@@ -1,4 +1,4 @@
-export const gameList = document.querySelector(".games-list");
+const gameList = document.querySelector(".games-list");
 const loaderParent = document.querySelector(".loadContainer");
 const errorContainer = document.querySelector(".errCont");
 

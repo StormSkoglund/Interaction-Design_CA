@@ -790,7 +790,7 @@ form {
 .h2-list {
   grid-area: h2;
   margin-bottom: 3em;
-  width: 50em;
+  max-width: 50em;
 }
 
 .console-images {
@@ -1270,7 +1270,7 @@ form {
   }
 
   .h2-list {
-    width: 15em;
+    max-width: 15em;
   }
 
   .games-list {
@@ -1833,7 +1833,7 @@ form {
   .console-images {
     grid-area: console;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -1862,7 +1862,7 @@ form {
   }
 
   .h2-list {
-    width: 15em;
+    max-width: 15em;
   }
 
   .games-list {
@@ -2055,5 +2055,11 @@ form {
     align-items: top;
     justify-content: center;
     max-width: 50vw;
+  }
+  /*styling for product-list site*/
+  .second-textbox h2,
+  p {
+    font-size: x-large;
+    max-width: 12em;
   }
 }
