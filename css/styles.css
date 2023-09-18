@@ -2057,9 +2057,13 @@ form {
     max-width: 50vw;
   }
   /*styling for product-list site*/
-  .second-textbox h2,
+  .leftbox {
+    max-width: 15em;
+  }
+
+  /*.second-textbox h2,
   p {
     font-size: x-large;
     max-width: 12em;
-  }
+  }*/
 }

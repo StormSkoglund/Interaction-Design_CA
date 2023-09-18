@@ -1,4 +1,4 @@
-const gameList = document.querySelector(".games-list");
+export const gameList = document.querySelector(".games-list");
 const loaderParent = document.querySelector(".loadContainer");
 const errorContainer = document.querySelector(".errCont");
 
@@ -13,7 +13,7 @@ function errorRendered(message) {
 const url = "https://api.noroff.dev/api/v1/gamehub";
 /*I was trying to move the API URL into another file to use it as a component of sorts, but I didn't manage to get it to work. I was following this video by MJ Philips "https://www.youtube.com/watch?v=l-nOOCb4wG0&list=PLOy2fxfOYlVPVTCIKfEKh5VGCR3_DmxV4&index=13"[viewed on 31. August 2023].*/
 
-async function getGames() {
+export async function getGames() {
   try {
     const response = await fetch(url);
     if (!response.ok) {

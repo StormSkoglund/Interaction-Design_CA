@@ -1,5 +1,7 @@
 import { gameList } from "./product-list";
 
+import { getGames } from "./product-list";
+
 const addToCartButton = document.querySelectorAll(".button games-button");
 
 addToCartButton.forEach((button) => {
@@ -7,13 +9,24 @@ addToCartButton.forEach((button) => {
 });
 
 function gameToCart() {
+  const id = this.dataset.id;
+  const name = this.dataset.name;
+
   toLocalStorage();
 }
 
 function toLocalStorage() {
   const selectedGames = localStorage.getItem("Games");
 
-  console.log(selectedGames);
+  if (selectedGames === null) {
+    return [];
+  } else {
+    return selectedGames;
+  }
+}
+
+function saveGames(selectedGames) {
+  localStorage.setItem();
 }
 
 /*const gameButton = document.querySelector(.games-button);
