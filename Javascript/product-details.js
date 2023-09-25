@@ -59,3 +59,41 @@ async function productDetails() {
 }
 
 productDetails();
+
+
+
+
+// shopping cart//
+
+let cart = [];
+
+ 
+
+let specProd = productPage(); // Using const specProd from outside the scope of the productPage function
+
+
+function button1(){
+  document.querySelector(".button cta new-game").addEventListener("click", gameToCartNew);
+}
+
+function button2(){
+  document.querySelector(".button cta new-game").addEventListener("click", gameToCartOld);
+}
+
+
+function gameToCartNew(){
+  localStorage.setItem("products", JSON.stringify(specProd.id));
+  localStorage.setItem("products", JSON.stringify(specProd.discountedPrice)); 
+  console.log(success);
+}
+
+function gameToCartOld(){
+  localStorage.setItem("products", JSON.stringify(specProd.id));
+  localStorage.setItem("products", JSON.stringify(specProd.price)); 
+}
+//if (!localStorage.getItem("cart")){
+//localStorage.setItem("cart", "[]");
+//console.log(cart);
+//}
+
+

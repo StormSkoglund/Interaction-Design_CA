@@ -1,10 +1,12 @@
-import { gameList } from "./product-list";
 
-import { getGames } from "./product-list";
+const addToCartButtonNew = document.querySelectorAll(".button cta new-game");
+const addToCartButtonOld = document.querySelectorAll(".button cta new-game");
 
-const addToCartButton = document.querySelectorAll(".button games-button");
+addToCartButtonNew.forEach((button) => {
+  button.addEventListener("click", gameToCart);
+});
 
-addToCartButton.forEach((button) => {
+addToCartButtonOld.forEach((button) => {
   button.addEventListener("click", gameToCart);
 });
 

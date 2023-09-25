@@ -36,8 +36,8 @@ async function renderIndexProduct() {
     loadContainer.innerHTML = ""; //Toggle off loading screen
     errorContainer.innerHTML = ""; //Toggle off error styling
     //here I am using backticks, in order to manually insert elements from the third object in the array, into the index.html document. I also attach custom classes, to keep the original styling of the site, for both the image and the text underneath the image//
-    homePageCover.innerHTML += `<span> <img src ="${superDupGame[2].image}" alt = "${superDupGame[2].description}" class ="front-cover" "> </span>`;
-    coverText.innerHTML += `<p class="front-image-text">"${superDupGame[2].description}" </p> <a class="button to-game" href="product_page.html?id=${superDupGame[2].id}">View Game</a>`;
+    homePageCover.innerHTML += `<span> <img src ="${superDupGame[5].image}" alt = "${superDupGame[5].description}" class ="front-cover" "> </span>`;
+    coverText.innerHTML += `<p class="front-image-text">"${superDupGame[5].description}" </p> <a class="button to-game" href="product_page.html?id=${superDupGame[5].id}">Become Super Duper!</a>`;
   } catch (error) {
     errorRendered(error.message);
   }
