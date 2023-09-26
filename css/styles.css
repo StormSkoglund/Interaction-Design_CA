@@ -1063,21 +1063,39 @@ form {
   }
 
   .search {
-    width: 5.5em;
+    /*width: 5.5em;
     height: 1.5em;
     border-radius: 7px;
     margin-top: -2.5em;
     margin-left: 0.2em;
     font-weight: bolder;
-    font-size: medium;
+    font-size: medium;*/
+    max-width: 10em;
+    max-height: 2.5em;
+    border-radius: 7px;
+    margin-top: -4.5em;
+    margin-left: 0.2em;
+    font-weight: bolder;
+    font-size: small;
   }
 
   .search-icon {
-    width: 1.5em;
+    /*width: 1.5em;
     height: 1.5em;
     margin-top: -2em;
     margin-right: -1.5em;
-    margin-left: 5.15em;
+    margin-left: 5.15em;*/
+    width: 0.9em;
+    height: 0.9em;
+    top: 4.6em;
+    margin-right: -8.5em;
+    margin-left: 5.8em;
+    background: var(--my-orange);
+    border: solid var(--my-white);
+    border-radius: 20%;
+    position: absolute;
+
+
   }
   footer {
     width: 100vw;
@@ -1636,18 +1654,23 @@ form {
   }
 
   .search {
-    width: 8em;
+    max-width: 11em;
     height: 2.5em;
     margin-top: -2.5em;
-    margin-left: 0.5em;
+    margin-left: 1.5em;
     font-size: medium;
   }
   .search-icon {
-    width: 2.5em;
-    height: 2.5em;
-    margin-top: -6em;
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: -2.5em;
     margin-right: -8.5em;
-    margin-left: 8.5em;
+    margin-left: 9.5em;
+    position: absolute;
+    background: var(--my-orange);
+    border: solid var(--my-white);
+    border-radius: 20%;
+
   }
   .header-item-1 {
     flex: 0.8;

@@ -65,20 +65,12 @@ productDetails();
 
 // shopping cart//
 
-let cart = [];
-
- 
-
-let specProd = productPage(); // Using const specProd from outside the scope of the productPage function
 
 
-function button1(){
-  document.querySelector(".button cta new-game").addEventListener("click", gameToCartNew);
-}
+/*async function fillCart() {
 
-function button2(){
-  document.querySelector(".button cta new-game").addEventListener("click", gameToCartOld);
-}
+try {
+const specProd = await productPage(); // Using const specProd from outside the scope of the productPage function
 
 
 function gameToCartNew(){
@@ -91,9 +83,46 @@ function gameToCartOld(){
   localStorage.setItem("products", JSON.stringify(specProd.id));
   localStorage.setItem("products", JSON.stringify(specProd.price)); 
 }
-//if (!localStorage.getItem("cart")){
-//localStorage.setItem("cart", "[]");
-//console.log(cart);
-//}
+
+} catch (error) {
+  errorRendered(error.message);
+}
+
+if (!localStorage.getItem("cart")){
+localStorage.setItem("cart", "[]");
+console.log(cart);
+}
 
 
+
+function button1(){
+  document.querySelector(".button cta new-game").addEventListener("click", gameToCartNew);
+}
+
+function button2(){
+  document.querySelector(".button cta used-game").addEventListener("click", gameToCartOld);
+}}
+
+fillCart();
+
+button1();
+
+button2();*/
+
+const oldGame = document.querySelector(".button cta used-game");
+const newGame = document.querySelector(".button cta new-game");
+
+oldGame.addEventListener("click", gameToCartOld);
+
+newGame.addEventListener("click", gameToCartNew);
+
+function gameToCartNew(){
+  localStorage.setItem("products", 5);
+  localStorage.setItem("products", 32); 
+  console.log(success);
+}
+
+function gameToCartOld(){
+  localStorage.setItem("products", JSON.stringify(specProd.id));
+  localStorage.setItem("products", JSON.stringify(specProd.price)); 
+}
