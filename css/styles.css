@@ -1006,6 +1006,43 @@ form {
 @media only screen and (max-width: 480px) {
   /*media queries max-width 480 pixel header and footer*/
 
+  /* Hamburger hack demonstrated in HTML and CSS module 2, under Navigation (lesson 3). */
+
+  /*Header hamburger menu*/
+  .hamburger-menu {
+    display: inline;
+    max-width: 5em;
+    max-height: 10em;
+    font-size: 5em;
+    color: var(--my-white);
+    font-family: "Karla", Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .mobile-nav{
+    background-color: var(--my-grey) ;
+    color: var(--my-white);
+    text-decoration: none;
+    border: solid var(--my-white);
+    font-size: smaller;
+    font-family: "Karla", Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #mobile-menu, .mobile-nav {
+    display: none;
+  }
+
+  #mobile-menu:checked ~ nav .mobile-nav{
+    display: block;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  .header-item-2, .header-item-3{
+    display: none;
+  }
+
   /* later adjustment for product site: Pick-Game small  */
 
   .pick-game {
@@ -1634,6 +1671,15 @@ form {
   }
 }
 @media only screen and (max-width: 1500px) and (min-width: 481px) {
+  /*header nav*/
+  #mobile-menu, .hamburger-menu {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
   /*header*/
   header {
     max-height: 8em;
@@ -2060,8 +2106,18 @@ form {
 }
 
 @media only screen and (max-width: 1920px) and (min-width: 1501px) {
-  /*New styling for desktop product_page, H2 and description (same as mobile and tablet)*/
+  
 
+  /*Header nav*/
+  #mobile-menu, .hamburger-menu {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+  
+/*New styling for desktop product_page, H2 and description (same as mobile and tablet)*/
   .product-mobile-flex {
     display: flex;
     justify-content: space-evenly;
