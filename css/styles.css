@@ -259,6 +259,15 @@ footer {
   max-height: fit-content;
 }
 
+#cart-button {
+  margin-left: 3em;
+  border: none;
+}
+
+.price-cart {
+  
+}
+
 /*Home page*/
 .main-split {
   background: linear-gradient(
