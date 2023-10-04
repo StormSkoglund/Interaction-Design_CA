@@ -1,54 +1,56 @@
 
-const addToCartButtonNew = document.querySelectorAll(".button cta new-game");
-const addToCartButtonOld = document.querySelectorAll(".button cta new-game");
 
-addToCartButtonNew.forEach((button) => {
-  button.addEventListener("click", gameToCart);
-});
+/*Oliver Dipples example*/
 
-addToCartButtonOld.forEach((button) => {
-  button.addEventListener("click", gameToCart);
-});
-
-function gameToCart() {
-  const id = this.dataset.id;
-  const name = this.dataset.name;
-
-  toLocalStorage();
+function save(key, value) {
+  const encodedValue = JSON.stringify(value);
+  localStorage.setItem(key, encodedValue);
 }
 
-function toLocalStorage() {
-  const selectedGames = localStorage.getItem("Games");
 
-  if (selectedGames === null) {
-    return [];
-  } else {
-    return selectedGames;
-  }
+function load(key, value) {
+  const encodedValue = localStorage.getItem(key);
+  return JSON.parse(encodedValue);
 }
 
-function saveGames(selectedGames) {
-  localStorage.setItem();
+function remove(key) {
+  localStorage.removeItem(key)
 }
 
-/*const gameButton = document.querySelector(.games-button);
+function onAddToCart(event) {
+  const button = event.target;
+  const id = button.dataset.id;
 
-gameList === gameButton;
+  let cart = load("cart") || [];
 
-// this is a method for adding a product to the cart, demonstrated by the channel "Code Explained", available at https://www.youtube.com/watch?v=UcrypywtAm0 [viewed on 13. September 2023].
+  const itemInCart = cart.find(item => item.id === id);
 
-// cart array
-let cart = [];
+      if (itemInCart) {
+        itemInCart.quantity++
+      } else {
+  cart.push({
+    id, 
+    quantity: 1}); }
 
-function addToCart(id) {
-  if (cart.some((item) => item.id === id)) {
-    alert("product already in cart");
-  }
+  save("cart", cart);
+}
 
-  // Add product to cart
-  const game = gameList.find((gameList) => gameList.id === id);
+function calculateTotal() {
+  const  cart = load("cart");
 
-  cart.push(game);
+  return cart.reduce((total, currentItem) => {return total + currentItem.quantity}, 0) // include return total 
+  
+}
 
-  console.log(cart);
-}*/
+function renderCart() {}
+
+function demo() {
+  const buttons = document.querySelectorAll("button[data-id]")
+
+  buttons.forEach(button => {button.addEventListener("click", onAddToCart)})
+
+  console.log(calculateTotal());
+}
+
+
+demo()

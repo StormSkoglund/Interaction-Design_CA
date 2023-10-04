@@ -3,8 +3,9 @@ const loaderParent = document.querySelector(".loadPar");
 const uniqueTitle = document.querySelector(".unTit");
 const metaDescription = document.querySelector(".meta");
 const usedPrices = document.querySelector(".price-cart");
-const newPrices = document.querySelector(".price-cart2");
+//const newPrices = document.querySelector(".price-cart2");
 const errorContainer = document.querySelector(".errCont");
+const buyGame = document.querySelector(".buy-game");
 
 // error handling method, as demonstrated by Talitha Kruger on Aug 32, 2023 on Loom.
 function errorRendered(message) {
@@ -48,8 +49,9 @@ async function productDetails() {
 
     prodFlex.innerHTML += `<img class ="APIgame" src = "${specProd.image}" alt = "${specProd.description}" /> <h2> ${specProd.title}</h2> <p> ${specProd.description} </p>`;
     uniqueTitle.innerHTML += `${specProd.title}`; // Change title in browser tab.
+    buyGame.innerHTML += `<button class="button cta new-game" id="cart-button" data-id="${specProd.id}" data-price="${specProd.title}" data-image="${specProd.image}" data-price="${specProd.title}">Add to Cart</button>`;
     usedPrices.innerHTML += `${specProd.discountedPrice}$`;
-    newPrices.innerHTML += `${specProd.price}$`;
+    //newPrices.innerHTML += `${specProd.price}$`;
     metaDescription.innerHTML += `
   name = "description"
   content = "${specProd.description}"`; // Change description in browser tab.
@@ -62,67 +64,35 @@ productDetails();
 
 
 
+// click to get my values from the buy game button.
 
-// shopping cart//
+function addToCart(){
+const buyButton = document.getElementById(".cart-button");
 
-
-
-/*async function fillCart() {
-
-try {
-const specProd = await productPage(); // Using const specProd from outside the scope of the productPage function
-
-
-function gameToCartNew(){
-  localStorage.setItem("products", JSON.stringify(specProd.id));
-  localStorage.setItem("products", JSON.stringify(specProd.discountedPrice)); 
-  console.log(success);
+buyButton.addEventListener("click", toLocalStorage);
+alert('Game has been added to the shopping cart, please proceed to review your order(s)!');
 }
 
-function gameToCartOld(){
-  localStorage.setItem("products", JSON.stringify(specProd.id));
-  localStorage.setItem("products", JSON.stringify(specProd.price)); 
+// Code from the Oliver Dipple demo, viewed on 13.september 2023.
+function toLocalStorage(key, value) {
+  const turnIntoString = JSON.stringify(value);
+  localStorage.setItem(key, turnIntoString);
 }
 
-} catch (error) {
-  errorRendered(error.message);
-}
+function onAddToCart(event) {
+  const button = event.target;
+  const id = button.dataset.id;
 
-if (!localStorage.getItem("cart")){
-localStorage.setItem("cart", "[]");
-console.log(cart);
-}
+  let cart = load("cart") || [];
 
+  const itemInCart = cart.find(item => item.id === id);
 
+      if (itemInCart) {
+        itemInCart.quantity++
+      } else {
+  cart.push({
+    id, 
+    quantity: 1}); }
 
-function button1(){
-  document.querySelector(".button cta new-game").addEventListener("click", gameToCartNew);
-}
-
-function button2(){
-  document.querySelector(".button cta used-game").addEventListener("click", gameToCartOld);
-}}
-
-fillCart();
-
-button1();
-
-button2();*/
-
-const oldGame = document.querySelector(".button cta used-game");
-const newGame = document.querySelector(".button cta new-game");
-
-oldGame.addEventListener("click", gameToCartOld);
-
-newGame.addEventListener("click", gameToCartNew);
-
-function gameToCartNew(){
-  localStorage.setItem("products", 5);
-  localStorage.setItem("products", 32); 
-  console.log(success);
-}
-
-function gameToCartOld(){
-  localStorage.setItem("products", JSON.stringify(specProd.id));
-  localStorage.setItem("products", JSON.stringify(specProd.price)); 
+  save("cart", cart);
 }
