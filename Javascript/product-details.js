@@ -67,7 +67,7 @@ productDetails();
 // click to get my values from the buy game button.
 
 function addToCart(){
-const buyButton = document.getElementById(".cart-button");
+const buyButton = document.getElementById("cart-button");
 
 buyButton.addEventListener("click", toLocalStorage);
 alert('Game has been added to the shopping cart, please proceed to review your order(s)!');
@@ -77,22 +77,4 @@ alert('Game has been added to the shopping cart, please proceed to review your o
 function toLocalStorage(key, value) {
   const turnIntoString = JSON.stringify(value);
   localStorage.setItem(key, turnIntoString);
-}
-
-function onAddToCart(event) {
-  const button = event.target;
-  const id = button.dataset.id;
-
-  let cart = load("cart") || [];
-
-  const itemInCart = cart.find(item => item.id === id);
-
-      if (itemInCart) {
-        itemInCart.quantity++
-      } else {
-  cart.push({
-    id, 
-    quantity: 1}); }
-
-  save("cart", cart);
 }
