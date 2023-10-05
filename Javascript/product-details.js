@@ -47,34 +47,79 @@ async function productDetails() {
     loaderParent.innerHTML = ""; //Toggle off loading screen
     errorContainer.innerHTML = ""; //Toggle off error styling
 
-    prodFlex.innerHTML += `<img class ="APIgame" src = "${specProd.image}" alt = "${specProd.description}" /> <h2> ${specProd.title}</h2> <p> ${specProd.description} </p>`;
-    uniqueTitle.innerHTML += `${specProd.title}`; // Change title in browser tab.
-    buyGame.innerHTML += `<button class="button cta new-game" id="cart-button" data-id="${specProd.id}" data-price="${specProd.title}" data-image="${specProd.image}" data-price="${specProd.title}">Add to Cart</button>`;
-    usedPrices.innerHTML += `${specProd.discountedPrice}$`;
-    //newPrices.innerHTML += `${specProd.price}$`;
-    metaDescription.innerHTML += `
-  name = "description"
-  content = "${specProd.description}"`; // Change description in browser tab.
-  } catch (error) {
-    errorRendered(error.message);
-  }
+   // Fix from Talitha.
+
+   // Create product elements using createElement
+   const productImage = document.createElement("img");
+   productImage.className = "APIgame";
+   productImage.src = specProd.image;
+   productImage.alt = specProd.description;
+   prodFlex.appendChild(productImage);
+
+   const productTitle = document.createElement("h2");
+   productTitle.textContent = specProd.title;
+   prodFlex.appendChild(productTitle);
+
+   const productDescription = document.createElement("p");
+   productDescription.textContent = specProd.description;
+   prodFlex.appendChild(productDescription);
+
+   uniqueTitle.textContent = specProd.title; // Change title in browser tab.
+
+   const addToCartButton = document.createElement("button");
+   addToCartButton.className = "button cta new-game";
+   addToCartButton.id = "cart-button";
+   addToCartButton.dataset.id = specProd.id;
+   addToCartButton.dataset.title = specProd.title;
+   addToCartButton.dataset.image = specProd.image;
+   addToCartButton.dataset.price = specProd.discountedPrice;
+   addToCartButton.textContent = "Add to Cart";
+
+   // Add an event listener to the "Add to Cart" button
+   addToCartButton.addEventListener("click", () => {
+     const cartItem = {
+       id: specProd.id,
+       price: specProd.discountedPrice,
+       image: specProd.image,
+       title: specProd.title,
+     };
+     toLocalStorage(specProd.id, cartItem);
+     alert(
+       "Game has been added cart, please proceed to the shopping cart to review your order(s)!"
+     );
+   });
+
+   buyGame.appendChild(addToCartButton);
+
+   usedPrices.textContent = `${specProd.discountedPrice}$`;
+   metaDescription.setAttribute("name", "description");
+   metaDescription.setAttribute("content", specProd.description); // Change description in browser tab.
+ } catch (error) {
+   errorRendered(error.message);
+ }
+}
+// Initialize the cart as an array in localStorage if it doesn't exist yet
+if (!localStorage.getItem("cart")) {
+  localStorage.setItem("cart", JSON.stringify([]));
+}
+
+// ...
+
+// Modify the toLocalStorage function to add items to the cart array in localStorage
+function toLocalStorage(key, value) {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  cart.push({ key, value });
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 productDetails();
 
+function renderCart(){
+  let gameInCart =
+  localStorage.getItem("cart")
 
-
-// click to get my values from the buy game button.
-
-function addToCart(){
-const buyButton = document.getElementById("cart-button");
-
-buyButton.addEventListener("click", toLocalStorage);
-alert('Game has been added to the shopping cart, please proceed to review your order(s)!');
+  document.querySelector(".checkout_display").innerHTML += cartItem
 }
 
-// Code from the Oliver Dipple demo, viewed on 13.september 2023.
-function toLocalStorage(key, value) {
-  const turnIntoString = JSON.stringify(value);
-  localStorage.setItem(key, turnIntoString);
-}
+renderCart()
+  
