@@ -3,7 +3,6 @@ const loaderParent = document.querySelector(".loadPar");
 const uniqueTitle = document.querySelector(".unTit");
 const metaDescription = document.querySelector(".meta");
 const usedPrices = document.querySelector(".price-cart");
-//const newPrices = document.querySelector(".price-cart2");
 const errorContainer = document.querySelector(".errCont");
 const buyGame = document.querySelector(".buy-game");
 
@@ -47,79 +46,73 @@ async function productDetails() {
     loaderParent.innerHTML = ""; //Toggle off loading screen
     errorContainer.innerHTML = ""; //Toggle off error styling
 
-   // Fix from Talitha.
+    // Fix from Talitha.
 
-   // Create product elements using createElement
-   const productImage = document.createElement("img");
-   productImage.className = "APIgame";
-   productImage.src = specProd.image;
-   productImage.alt = specProd.description;
-   prodFlex.appendChild(productImage);
+    // Create product elements using createElement
+    const productImage = document.createElement("img");
+    productImage.className = "APIgame";
+    productImage.src = specProd.image;
+    productImage.alt = specProd.description;
+    prodFlex.appendChild(productImage);
 
-   const productTitle = document.createElement("h2");
-   productTitle.textContent = specProd.title;
-   prodFlex.appendChild(productTitle);
+    const productTitle = document.createElement("h2");
+    productTitle.textContent = specProd.title;
+    prodFlex.appendChild(productTitle);
 
-   const productDescription = document.createElement("p");
-   productDescription.textContent = specProd.description;
-   prodFlex.appendChild(productDescription);
+    const productDescription = document.createElement("p");
+    productDescription.textContent = specProd.description;
+    prodFlex.appendChild(productDescription);
 
-   uniqueTitle.textContent = specProd.title; // Change title in browser tab.
+    uniqueTitle.textContent = specProd.title; // Change title in browser tab.
 
-   const addToCartButton = document.createElement("button");
-   addToCartButton.className = "button cta new-game";
-   addToCartButton.id = "cart-button";
-   addToCartButton.dataset.id = specProd.id;
-   addToCartButton.dataset.title = specProd.title;
-   addToCartButton.dataset.image = specProd.image;
-   addToCartButton.dataset.price = specProd.discountedPrice;
-   addToCartButton.textContent = "Add to Cart";
+    const addToCartButton = document.createElement("button");
+    addToCartButton.className = "button cta new-game";
+    addToCartButton.id = "cart-button";
+    addToCartButton.dataset.id = specProd.id;
+    addToCartButton.dataset.title = specProd.title;
+    addToCartButton.dataset.image = specProd.image;
+    addToCartButton.dataset.price = specProd.discountedPrice;
+    addToCartButton.textContent = "Add to Cart";
 
-   // Add an event listener to the "Add to Cart" button
-   addToCartButton.addEventListener("click", () => {
-     const cartItem = {
-       id: specProd.id,
-       price: specProd.discountedPrice,
-       image: specProd.image,
-       title: specProd.title,
-     };
-     toLocalStorage(specProd.id, cartItem);
-     alert(
-       "Game has been added cart, please proceed to the shopping cart to review your order(s)!"
-     );
-   });
+    // Add an event listener to the "Add to Cart" button
+    addToCartButton.addEventListener("click", () => {
+      const cartItem = {
+        id: specProd.id,
+        price: specProd.discountedPrice,
+        image: specProd.image,
+        title: specProd.title,
+      };
+      saveToCart(cartItem);
+      alert(
+        "Game has been added cart, please proceed to the shopping cart to review your order(s)!"
+      );
+    });
 
-   buyGame.appendChild(addToCartButton);
+    buyGame.appendChild(addToCartButton);
 
-   usedPrices.textContent = `${specProd.discountedPrice}$`;
-   metaDescription.setAttribute("name", "description");
-   metaDescription.setAttribute("content", specProd.description); // Change description in browser tab.
- } catch (error) {
-   errorRendered(error.message);
- }
-}
-// Initialize the cart as an array in localStorage if it doesn't exist yet
-if (!localStorage.getItem("cart")) {
-  localStorage.setItem("cart", JSON.stringify([]));
+    usedPrices.textContent = `${specProd.discountedPrice}$`;
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", specProd.description); // Change description in browser tab.
+  } catch (error) {
+    errorRendered(error.message);
+  }
 }
 
 // ...
 
-// Modify the toLocalStorage function to add items to the cart array in localStorage
-function toLocalStorage(key, value) {
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  cart.push({ key, value });
-  localStorage.setItem("cart", JSON.stringify(cart));
+function saveToStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function loadFromStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
+function saveToCart(product) {
+  const cart = loadFromStorage("cart") || [];
+  cart.push(product);
+  saveToStorage("cart", cart);
 }
 
 productDetails();
-
-function renderCart(){
-  let gameInCart =
-  localStorage.getItem("cart")
-
-  document.querySelector(".checkout_display").innerHTML += cartItem
-}
-
-renderCart()
   
