@@ -734,30 +734,16 @@ form {
 }*/
 
 .pick-game {
-  /*position: relative;
-  top: -55em;
-  left: 1em;*/
-  margin: 3em;
-  max-width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin: 1em;
 }
 
-.new-game {
-  position: relative;
-  left: 9em;
-  top: -2.2em;
-}
-.used-game {
-  position: relative;
-  left: 9em;
-  top: -2.2em;
-}
 
 .price-cart,
 .price-cart2 {
-  position: relative;
-  width: 50px;
-  left: 19em;
-  top: -3.5em;
   padding: 6px;
   box-shadow: 0px 4px 5px #575555;
 }
@@ -1521,25 +1507,13 @@ form {
     /*margin: 2em;*/
     max-width: 70vw;
   }
-
-  .new-game {
-    position: relative;
-    left: 7.5em;
-    top: -2.2em;
-  }
-  .used-game {
-    position: relative;
-    left: 7.5em;
-    top: -2.2em;
-  }
-
   .price-cart,
   .price-cart2 {
-    position: relative;
+   /* position: relative;
     display: inline-block;
     width: 40px;
     top: -3.5em;
-    margin-left: -2.5em;
+    margin-left: -2.5em;*/
     padding: 6px;
     box-shadow: 0px 4px 5px #575555;
   }
@@ -2070,24 +2044,11 @@ form {
     font-weight: bold;
   }
 
-  .new-game {
-    position: relative;
-    left: 7.5em;
-    top: -2.2em;
-  }
-  .used-game {
-    position: relative;
-    left: 7.5em;
-    top: -2.2em;
-  }
+  
+  
 
   .price-cart,
   .price-cart2 {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    top: -3.5em;
-    margin-left: -2em;
     padding: 6px;
     box-shadow: 0px 4px 5px #575555;
   }
