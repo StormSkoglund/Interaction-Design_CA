@@ -1,13 +1,18 @@
 // render shopping cart (see checkout.html)
 
-function loadCart(){
+
   const gameInCart =
   localStorage.getItem("cart");
-  JSON.parse(gameInCart);
+  
 
-
-  document.querySelector(".checkout_display").innerHTML += gameInCart;
-
+  
+  for (let i = 0; i < gameInCart.length; i++) {
+  console.log(gameInCart[i])
+  document.querySelector(".checkout_display").innerHTML += gameInCart[i];  
 }
+  
+  
 
-loadCart();
+
+
+
