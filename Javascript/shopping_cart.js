@@ -1,4 +1,4 @@
-// render shopping cart
+// render shopping cart (see checkout.html)
 
 function loadCart(){
   const gameInCart =
@@ -6,7 +6,7 @@ function loadCart(){
   JSON.parse(gameInCart);
 
 
-  document.querySelector(".checkout_display").innerHTML +=` "${gameInCart} + class=""`;
+  document.querySelector(".checkout_display").innerHTML += gameInCart;
 
 }
 
