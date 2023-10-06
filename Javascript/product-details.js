@@ -1,3 +1,6 @@
+// The following JavaScript document contains code made with supervision, and or edits/inputs from Talitha Kruger on Oct 4. - 6. 2023!
+
+
 const prodFlex = document.querySelector(".product-mobile-flex");
 const loaderParent = document.querySelector(".loadPar");
 const uniqueTitle = document.querySelector(".unTit");
@@ -84,7 +87,7 @@ async function productDetails() {
       };
       saveToCart(cartItem);
       alert(
-        "Game has been added cart, please proceed to the shopping cart to review your order(s)!"
+        "Game has been added to cart, please proceed to the shopping cart to review your order(s)!"
       );
     });
 
@@ -109,9 +112,15 @@ function loadFromStorage(key) {
 }
 
 function saveToCart(product) {
+
+//Prevent that more of the same products get saved in cart
   const cart = loadFromStorage("cart") || [];
-  cart.push(product);
-  saveToStorage("cart", cart);
+  
+
+  if (cart.some((product) => product.id ===id)) { alert("Game has already been added to the cart"); } else { // Method to prevent double orders viewed at the youtube channel "freeCodecamp.org" url "https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=5788s"[viewed on 6th of October, 2023].
+    cart.push(product);
+    saveToStorage("cart", cart);
+  }
 }
 
 productDetails();
