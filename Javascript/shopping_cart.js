@@ -5,21 +5,28 @@
 
 const gameInCart =JSON.parse(localStorage.getItem("cart"));
 
+// Remove function WIP
+function remove(key){
+  localStorage.removeItem(key);
+ ;
+}
+
   for (let i = 0; i < gameInCart.length; i++) {
     // insert the html to render the game
     const game = gameInCart[i];
     
-document.querySelector(".checkout_display").innerHTML += `<h2>${game.title}</h2> <img src="${game.image}"></img> <p> 1 X </p><div class="price_checkout">Price:  ${game.price} $</div>    `;
-  }
+document.querySelector(".checkout_display").innerHTML += `<h2>${game.title}</h2> <img src="${game.image}"></img> <p> 1 X </p><div class="price_checkout">Price:  ${game.price} $</div> <button class="remove" " onclick="remove()"> Remove Game </game>   `;
 
-
-for (let  i= 0; i < gameInCart.length; i++) {
- // display total value when adding game prices together
- const gameCost = gameInCart[i].price;
- 
-console.log(gameCost);
- //fortsæt herfra!
 }
+
+
+
+//watch this next https://www.youtube.com/watch?v=1RnzyplvqEg total price explained!
+  
+
+
+    
+
 
 
 

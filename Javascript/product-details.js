@@ -9,6 +9,7 @@ const usedPrices = document.querySelector(".price-cart");
 const errorContainer = document.querySelector(".errCont");
 const buyGame = document.querySelector(".buy-game");
 
+
 // error handling method, as demonstrated by Talitha Kruger on Aug 32, 2023 on Loom.
 function errorRendered(message) {
   const errorHtml = document.getElementById("error");
@@ -75,6 +76,7 @@ async function productDetails() {
     addToCartButton.dataset.title = specProd.title;
     addToCartButton.dataset.image = specProd.image;
     addToCartButton.dataset.price = specProd.discountedPrice;
+    addToCartButton.dataset.amount = 1;
     addToCartButton.textContent = "Add to Cart";
 
     // Add an event listener to the "Add to Cart" button
@@ -84,11 +86,20 @@ async function productDetails() {
         price: specProd.discountedPrice,
         image: specProd.image,
         title: specProd.title,
+        amount: 1,
       };
       saveToCart(cartItem);
       alert(
         "Game has been added to cart, please proceed to the shopping cart to review your order(s)!"
       );
+
+      //Adds the game to the shopping cart counter, I will continue on this feature!
+      const result = (cartItem.amount++);
+      
+    
+  
+      document.querySelector(".Games_in_cart").innerHTML =`${result}`;
+      
     });
 
     buyGame.appendChild(addToCartButton);
@@ -111,15 +122,20 @@ function loadFromStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 
+// Saving game to Local Storage
 function saveToCart(product) {
 
-//Prevent that more of the same products get saved in cart
   const cart = loadFromStorage("cart") || [];
   
 
   if (cart.some((product) => product.id ===id)) { alert("Game has already been added to the cart"); } else { // Method to prevent double orders viewed at the youtube channel "freeCodecamp.org" url "https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=5788s"[viewed on 6th of October, 2023].
     cart.push(product);
     saveToStorage("cart", cart);
+
+  
+    
+
+     
   }
 }
 
