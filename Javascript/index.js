@@ -11,7 +11,7 @@ function errorRendered(message) {
 }
 
 const url =
-  "https://cms-ca.alex-skoglund.no/wp-json/wc/store/products"; // API call for products originating from my own domain. 
+  "https://cms-ca.alex-skoglund.no/wp-json/wc/store/products"; // API call for products originating from my own domain, products were created with the WooCommerce plugin in WordPress. 
 
 async function gameInfoHomepage() {
   try {

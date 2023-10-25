@@ -8,10 +8,10 @@ function errorRendered(message) {
   errorHtml.innerHTML = `<h2>An error has occurred: ${message}<h2>`;
 }
 
-/*Here I am adding the unique product id from the API call to the HTML of the product-site*/
+/*This is the updated API call from my Wordpress host via my own domain at One.com*/
 
-const url = "https://api.noroff.dev/api/v1/gamehub";
-/*I was trying to move the API URL into another file to use it as a component of sorts, but I didn't manage to get it to work. I was following this video by MJ Philips "https://www.youtube.com/watch?v=l-nOOCb4wG0&list=PLOy2fxfOYlVPVTCIKfEKh5VGCR3_DmxV4&index=13"[viewed on 31. August 2023].*/
+const url = "https://cms-ca.alex-skoglund.no/wp-json/wc/store/products";
+
 
  async function getGames() {
   try {
@@ -28,7 +28,7 @@ const url = "https://api.noroff.dev/api/v1/gamehub";
   }
 }
 
-/*I am using the forEach method, this was demonstrated in module 4, lesson one. I am looping through my list (gameDetails), which contains meta data about the different games)
+/*I am reusing the code from JS1, since it is working as intented. I am instead changing certain keywords since the WooCommerce API difffers sligthly from the Noroff API.
  */
 async function renderList() {
   try {
@@ -40,9 +40,9 @@ async function renderList() {
 
     collection.forEach((unique) => {
       gameList.innerHTML += `<div>
-          <p> ${unique.title} </p>
+          <p> ${unique.name} </p>
           <img
-            src="${unique.image}"
+            src="${unique.images[0].src}"
             
             class="img_as_pl"
 
@@ -55,5 +55,5 @@ async function renderList() {
     errorRendered(error.message);
   }
 }
-/* In the above code, I have selected my container and then I created new HTML in my products-list HTML page, changing out the hardcoded game titles and cover photos as well as giving them the original styling via class names*/
+
 renderList();
