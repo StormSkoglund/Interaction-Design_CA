@@ -2150,4 +2150,13 @@ form {
     font-size: x-large;
     max-width: 12em;
   }*/
+
+  .front-image-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: xx-large;
+    text-align: center;
+
+  }
 }

@@ -11,10 +11,8 @@ function errorRendered(message) {
 }
 
 const url =
-  "https://api.noroff.dev/api/v1/gamehub"; /*I was trying to move the API URL into another file to use it as a component of sorts, but I didn't manage to get it to work. I was following this video by MJ Philips "https://www.youtube.com/watch?v=l-nOOCb4wG0&list=PLOy2fxfOYlVPVTCIKfEKh5VGCR3_DmxV4&index=13"[viewed on 31. August 2023].*/
+  "https://cms-ca.alex-skoglund.no/wp-json/wc/store/products"; // API call for products originating from my own domain. 
 
-//this API call swaps out the hardcoded super duper game cover on my homepage, with the one from the API,
-//while keeping my own generated screenshot (i asked Talitha if could keep this for layout purposes). */
 async function gameInfoHomepage() {
   try {
     const response = await fetch(url);
@@ -36,8 +34,8 @@ async function renderIndexProduct() {
     loadContainer.innerHTML = ""; //Toggle off loading screen
     errorContainer.innerHTML = ""; //Toggle off error styling
     //here I am using backticks, in order to manually insert elements from the third object in the array, into the index.html document. I also attach custom classes, to keep the original styling of the site, for both the image and the text underneath the image//
-    homePageCover.innerHTML += `<span> <img src ="${superDupGame[5].image}" alt = "${superDupGame[5].description}" class ="front-cover" "> </span>`;
-    coverText.innerHTML += `<p class="front-image-text">"${superDupGame[5].description}" </p> <a class="button to-game" href="product_page.html?id=${superDupGame[5].id}">Become Super Duper!</a>`;
+    homePageCover.innerHTML += `<span> <img src ="${superDupGame[0].images[0].src}" alt = "${superDupGame[0].images[0].alt}" class ="front-cover" "> </span>`;
+    coverText.innerHTML += `<div class="front-image-text"${superDupGame[0].description} </div> <a class="button to-game" href="product_page.html?id=${superDupGame[0].id}">Become Super Duper!</a>`;
   } catch (error) {
     errorRendered(error.message);
   }

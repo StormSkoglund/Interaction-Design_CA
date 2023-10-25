@@ -1,3 +1,3 @@
-# Interaction Design
+# CMS MOVING PROJECT TO A NEW BRANCH
 
-Important info: I have tried to implement an interactive shopping cart, but certain elements like rendering a subtotal and removing the product from the shopping cart is still missing. See the report for further info.
+Moving to a new branch for the CMS EXAM
