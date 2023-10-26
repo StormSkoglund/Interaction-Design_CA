@@ -26,7 +26,7 @@ const id = parameters.get("id");
 
 // Here I am adding the unique product id from the API call to the HTML of the product-site
 
-const url = "https://api.noroff.dev/api/v1/gamehub/" + id;
+const url = "https://cms-ca.alex-skoglund.no/wp-json/wc/store/products/" + id;
 
 async function productPage() {
   try {
@@ -55,27 +55,27 @@ async function productDetails() {
     // Create product elements using createElement
     const productImage = document.createElement("img");
     productImage.className = "APIgame";
-    productImage.src = specProd.image;
+    productImage.src = specProd.images[0].src;
     productImage.alt = specProd.description;
     prodFlex.appendChild(productImage);
 
     const productTitle = document.createElement("h2");
-    productTitle.textContent = specProd.title;
+    productTitle.textContent = specProd.name;
     prodFlex.appendChild(productTitle);
 
-    const productDescription = document.createElement("p");
-    productDescription.textContent = specProd.description;
-    prodFlex.appendChild(productDescription);
+    
+    prodFlex.innerHTML += `${specProd.description}`;
+    
 
-    uniqueTitle.textContent = specProd.title; // Change title in browser tab.
+    uniqueTitle.textContent = specProd.name; // Change title in browser tab.
 
     const addToCartButton = document.createElement("button");
     addToCartButton.className = "button cta new-game";
     addToCartButton.id = "cart-button";
     addToCartButton.dataset.id = specProd.id;
-    addToCartButton.dataset.title = specProd.title;
-    addToCartButton.dataset.image = specProd.image;
-    addToCartButton.dataset.price = specProd.discountedPrice;
+    addToCartButton.dataset.title = specProd.name;
+    addToCartButton.dataset.image = specProd.images[0].src;
+    addToCartButton.dataset.price = specProd.prices.price;
     addToCartButton.dataset.amount = 1;
     addToCartButton.textContent = "Add to Cart";
 
@@ -83,9 +83,9 @@ async function productDetails() {
     addToCartButton.addEventListener("click", () => {
       const cartItem = {
         id: specProd.id,
-        price: specProd.discountedPrice,
-        image: specProd.image,
-        title: specProd.title,
+        price: specProd.prices.price,
+        image: specProd.images[0].src,
+        title: specProd.name,
         amount: 1,
       };
       saveToCart(cartItem);
@@ -104,7 +104,7 @@ async function productDetails() {
 
     buyGame.appendChild(addToCartButton);
 
-    usedPrices.textContent = `${specProd.discountedPrice}$`;
+    usedPrices.textContent = `${specProd.prices.currency_prefix} ${specProd.prices.price}`;
     metaDescription.setAttribute("name", "description");
     metaDescription.setAttribute("content", specProd.description); // Change description in browser tab.
   } catch (error) {
@@ -140,4 +140,3 @@ function saveToCart(product) {
 }
 
 productDetails();
-  

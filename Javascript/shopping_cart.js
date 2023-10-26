@@ -15,7 +15,7 @@ function remove(key){
     // insert the html to render the game
     const game = gameInCart[i];
     
-document.querySelector(".checkout_display").innerHTML += `<h2>${game.title}</h2> <img src="${game.image}"></img> <p> 1 X </p><div class="price_checkout">Price:  ${game.price} $</div> <button class="remove" " onclick="remove()"> Remove Game </game>   `;
+document.querySelector(".checkout_display").innerHTML += `<h2>${game.title}</h2> <img src="${game.image}"></img> <p> 1 X </p><div class="price_checkout">Price:  ${game.price} kr.</div> <button class="remove" " onclick="remove()"> Remove Game </game>   `;
 
 }
 
