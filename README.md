@@ -2,7 +2,7 @@
 
 ![image](/images/GAMEHUB.png)
 
-This site was the first website i've build.
+My very first website
 
 ## Description
 
