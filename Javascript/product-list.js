@@ -47,13 +47,20 @@ async function renderList() {
             class="img_as_pl"
 
             alt="${unique.description}"
-          /> <span>Price:${unique.prices.currency_prefix} ${unique.prices.price}</span>
+          /> Price:${unique.prices.currency_prefix} ${unique.prices.price}</span>
           <a href="product_page.html?id=${unique.id}" class="button games-button">View Game</a>
         </div>`;
     });
+
+    if (unique[0].on_sale){
+      gameList.innerHTML += `<span class="sale" >On Sale </span>`;
+    }
+    
   } catch (error) {
     errorRendered(error.message);
   }
 }
 
 renderList();
+
+
