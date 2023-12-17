@@ -13,12 +13,15 @@ Game Hub: A website for a fictitious online game store. This project was origina
 -HTML
 -CSS
 -JavaScript (added on at a much later stage)
+-WordPress is used as a content management system (CMS), and API calls are made to fetch and render games on this site.
 
 ### Running
 
 How to launch my site:
 
 Please install the "Live Server" plugin via your extensions menu in Visual Studio Code, or copy the path of the index.html file and paste it directly in your browser. You can also drag and drop the index.html into your browser.
+
+Or go to https://cms-ca-skoglund.netlify.app/ to visit the website!
 
 ## Contact
 
